@@ -1,0 +1,426 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\..\FrameXML\UI.xsd">
+	
+	<Script file="localization.lua" />
+	<Script file="RogueFocus.lua" />
+	
+	<FontString name="RogueFocusFontBigTemplate" font="Fonts\FRIZQT__.TTF" virtual="true">
+		<FontHeight>
+			<AbsValue val="10" />
+		</FontHeight>
+		<Color r="1.0" g="1.0" b="1.0" />
+	</FontString>
+	
+	<FontString name="RogueFocusFontSmallTemplate" font="Fonts\FRIZQT__.TTF" virtual="true">
+		<FontHeight>
+			<AbsValue val="8" />
+		</FontHeight>
+		<Color r="1.0" g="1.0" b="1.0" />
+	</FontString>
+	
+	<Frame name="RogueFocusFrame" toplevel="true" clampedToScreen="true" enableMouse="true" movable="true" parent="UIParent">
+		<Size>
+			<AbsDimension x="110" y="38" />
+		</Size>
+		<Anchors>
+			<Anchor point="BOTTOM" relativeTo="UIParent" relativePoint="BOTTOM">
+				<Offset>
+					<AbsDimension x="0" y="120" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+			<EdgeSize>
+				<AbsValue val="16" />
+			</EdgeSize>
+			<TileSize>
+				<AbsValue val="16" />
+			</TileSize>
+		</Backdrop>
+		<Frames>
+			<Frame setAllPoints="true">
+				<Scripts>
+					<OnMouseDown>
+						if(arg1 == "LeftButton") then
+							this:GetParent():StartMoving();
+						end
+					</OnMouseDown>
+					<OnMouseUp>
+						this:GetParent():StopMovingOrSizing();
+					</OnMouseUp>
+				</Scripts>
+			</Frame>
+			
+			<Button name="RogueFocusBorder1">
+				<Size>
+					<AbsDimension x="20" y="12" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="3" y="-1" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="ARTWORK">
+						<Texture name="RogueFocusBorder1Texture" file="Interface\Tooltips\UI-StatusBar-Border">
+							<Size>
+								<AbsDimension x="20" y="12" />
+							</Size>
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset>
+										<AbsDimension x="3" y="-1" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<StatusBar name="RogueFocusCombo1" inherits="TextStatusBar" framestrata="BACKGROUND">
+						<Size>
+							<AbsDimension x="16" y="8" />
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset>
+									<AbsDimension x="5" y="-3" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<BarTexture file="Interface\TargetingFrame\UI-StatusBar" />
+					</StatusBar>
+				</Frames>
+			</Button>
+			
+			<Button name="RogueFocusBorder2">
+				<Size>
+					<AbsDimension x="20" y="12" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="13" y="-1" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="ARTWORK">
+						<Texture name="RogueFocusBorder2Texture" file="Interface\Tooltips\UI-StatusBar-Border">
+							<Size>
+								<AbsDimension x="20" y="12" />
+							</Size>
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset>
+										<AbsDimension x="13" y="-1" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<StatusBar name="RogueFocusCombo2" inherits="TextStatusBar" framestrata="BACKGROUND">
+						<Size>
+							<AbsDimension x="16" y="8" />
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset>
+									<AbsDimension x="15" y="-3" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<BarTexture file="Interface\TargetingFrame\UI-StatusBar" />
+					</StatusBar>
+				</Frames>
+			</Button>
+			
+			<Button name="RogueFocusBorder3">
+				<Size>
+					<AbsDimension x="20" y="12" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="23" y="-1" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="ARTWORK">
+						<Texture name="RogueFocusBorder3Texture" file="Interface\Tooltips\UI-StatusBar-Border">
+							<Size>
+								<AbsDimension x="20" y="12" />
+							</Size>
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset>
+										<AbsDimension x="23" y="-1" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<StatusBar name="RogueFocusCombo3" inherits="TextStatusBar" framestrata="BACKGROUND">
+						<Size>
+							<AbsDimension x="16" y="8" />
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset>
+									<AbsDimension x="25" y="-3" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<BarTexture file="Interface\TargetingFrame\UI-StatusBar" />
+					</StatusBar>
+				</Frames>
+			</Button>
+			
+			<Button name="RogueFocusBorder4">
+				<Size>
+					<AbsDimension x="20" y="12" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="33" y="-1" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="ARTWORK">
+						<Texture name="RogueFocusBorder4Texture" file="Interface\Tooltips\UI-StatusBar-Border">
+							<Size>
+								<AbsDimension x="20" y="12" />
+							</Size>
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset>
+										<AbsDimension x="33" y="-1" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<StatusBar name="RogueFocusCombo4" inherits="TextStatusBar" framestrata="BACKGROUND">
+						<Size>
+							<AbsDimension x="16" y="8" />
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset>
+									<AbsDimension x="35" y="-3" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<BarTexture file="Interface\TargetingFrame\UI-StatusBar" />
+					</StatusBar>
+				</Frames>
+			</Button>
+			
+			<Button name="RogueFocusBorder5">
+				<Size>
+					<AbsDimension x="20" y="12" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="43" y="-1" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="ARTWORK">
+						<Texture name="RogueFocusBorder5Texture" file="Interface\Tooltips\UI-StatusBar-Border">
+							<Size>
+								<AbsDimension x="20" y="12" />
+							</Size>
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset>
+										<AbsDimension x="43" y="-1" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<StatusBar name="RogueFocusCombo5" inherits="TextStatusBar" framestrata="BACKGROUND">
+						<Size>
+							<AbsDimension x="16" y="8" />
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset>
+									<AbsDimension x="45" y="-3" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<BarTexture file="Interface\TargetingFrame\UI-StatusBar" />
+					</StatusBar>
+				</Frames>
+			</Button>
+			
+			<Button name="RogueFocusBorderEnergy">
+				<Size>
+					<AbsDimension x="103" y="12" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="2" y="-6" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="ARTWORK">
+						<Texture name="RogueFocusBorderEnergyTexture" file="Interface\Tooltips\UI-StatusBar-Border">
+							<Size>
+								<AbsDimension x="103" y="12" />
+							</Size>
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset>
+										<AbsDimension x="2" y="-6" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+					<Layer level="ARTWORK">
+						<FontString name="RogueFocusEnergyText" inherits="RogueFocusFontBigTemplate">
+							<Anchors>
+								<Anchor point="CENTER">
+									<Offset>
+										<AbsDimension x="2" y="-6" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<StatusBar name="RogueFocusEnergyBar" inherits="TextStatusBar" framestrata="BACKGROUND">
+						<Size>
+							<AbsDimension x="99" y="8" />
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset>
+									<AbsDimension x="4" y="-8" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>
+								this:SetFrameLevel(this:GetFrameLevel() - 1)
+							</OnLoad>
+						</Scripts>
+						<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
+						<BarColor r="1.0" g="0.60" b="0.0"/>
+					</StatusBar>
+				</Frames>
+			</Button>
+			
+			<Button name="RogueFocusEnergyTick">
+				<Size>
+					<AbsDimension x="103" y="12"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="2" y="-16"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="ARTWORK">
+						<Texture name="RogueFocusEnergyTickTexture" file="Interface\Tooltips\UI-StatusBar-Border">
+							<Size>
+								<AbsDimension x="103" y="12"/>
+							</Size>
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset>
+										<AbsDimension x="2" y="-6"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+					<Layer level="ARTWORK">
+						<FontString name="RogueFocusEnergyTickText" inherits="RogueFocusFontSmallTemplate">
+							<Anchors>
+								<Anchor point="CENTER">
+									<Offset>
+										<AbsDimension x="2" y="-6"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<StatusBar name="RogueFocusEnergyTickBar" inherits="TextStatusBar" framestrata="BACKGROUND">
+						<Size>
+							<AbsDimension x="99" y="8"/>
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset>
+									<AbsDimension x="4" y="-8"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="OVERLAY">
+								<Texture name="RogueFocusEnergyTickSpark" file="Interface\CastingBar\UI-CastingBar-Spark" alphaMode="ADD">
+									<Size>
+										<AbsDimension x="16" y="22"/>
+									</Size>
+									<Anchors>
+										<Anchor point="CENTER">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnLoad>
+								this:SetFrameLevel(this:GetFrameLevel() - 1)
+							</OnLoad>
+						</Scripts>
+						<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
+						<BarColor r="1.0" g="0.40" b="0.0"/>
+					</StatusBar>
+				</Frames>
+			</Button>
+		</Frames>
+		
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropBorderColor(0.7, 0.7, 0.7);
+				RogueFocus:OnLoad();
+			</OnLoad>
+			<OnEvent>
+				RogueFocus:OnEvent(event);
+			</OnEvent>
+			<OnUpdate>
+				RogueFocus:OnUpdate();
+			</OnUpdate>
+		</Scripts>
+	</Frame>
+</Ui>
